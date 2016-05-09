@@ -22,8 +22,8 @@ class AccessUrls:
 
     def __init__(self):
         self.gevent_timeout = 20#seconds
-    @staticmethod
-    def task(self, url, try_idx):
+    def requestUrl(self,url,try_idx):
+
         proxy = proxymgr.next_proxy(url).proxy
         proxies = {'http': proxy, 'https': proxy}
         headers = {
@@ -57,11 +57,16 @@ class AccessUrls:
                 if(response.headers.get('content-encoding', None) == 'gzip'):
                     html = gzip.GzipFile(fileobj=StringIO.StringIO(html)).read()
                 print html
-                return True 
+                return html 
         logging.error("task(%s) - Max try time exceed.Abort." % (url))
-        return False
+        return None
     @staticmethod
-    def task_generator(self,urls):
+    def task(self, url, try_idx, extractSearchResults):
+        html = self.requestUrl(url,try_idx)
+        if html!= None:
+            extractSearchResults(html)
+    @staticmethod
+    def taskGenerator(self,urls,extractSearchResults):
         try:
             assert len(urls) > 0
         except AssertionError:
@@ -69,9 +74,9 @@ class AccessUrls:
             sys.exit()
         else:
             for url in urls:
-                yield gtaskpool.Task(AccessUrls.task, [self, url,3])
+                yield gtaskpool.Task(AccessUrls.task, [self, url,3,extractSearchResults])
 
-    def gtaskmanager(self,urls):
+    def gtaskManager(self,urls,extractSearchResults):
         task_log = None 
         gtaskpool.setlogging(logging.INFO,task_log)
         purl1 = ["http://192.168.120.17:8014/proxy/get_http_proxy_list"]
@@ -89,8 +94,13 @@ class AccessUrls:
         if useragents == []:
             useragents = [None]
 
-        gtaskpool.runtasks(AccessUrls.task_generator(self,urls))
+        gtaskpool.runtasks(AccessUrls.taskGenerator(self,urls,extractSearchResults))
+def extractSearchResults(html):
+    '''
+    for test
+    '''
+    print html
 if __name__ == "__main__":
-    urls = ['','']
+    urls = ['http://www.iie.ac.cn/','http://www.163.com/']
     a = AccessUrls()
-    a.gtaskmanager(urls)
+    a.gtaskManager(urls,extractSearchResults)

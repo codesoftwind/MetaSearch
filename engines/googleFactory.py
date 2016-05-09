@@ -11,7 +11,7 @@ import random
 import types
 import os
 from searchResult import SearchResult
-class SearxFactory(EngineFactory)
+class GoogleFactory(EngineFactory):
     def __init__(self):
         self.engine_name = "Google"
         self.engine_domain = "https://www.google.de/"
@@ -21,7 +21,7 @@ class SearxFactory(EngineFactory)
     def urlGenerator(self,query):
         urls_list = list()
         try:
-            assert sefl.page_num > 0 and self.results_num > 0
+            assert self.page_num > 0 and self.results_num > 0
         except AssertionError:
             logging.error(
                 'Parameter error,please check the parameters.Program Aborted')
@@ -31,10 +31,11 @@ class SearxFactory(EngineFactory)
             for p in range(0, self.page_num):
                 start = p * results_per_page
                 url = '%ssearch?hl=en&num=%d&start=%s&q=%s&filter=0' % (
-                    base_url, results_per_page, start, query)
-                urls.append(url)
+                    self.engine_domain, results_per_page, start, query)
+                urls_list.append(url)
         return urls_list
     def extractSearchResults(self,html):
+        print html
         results = list()
         soup = BeautifulSoup(html)
         div = soup.find('div', id='search')
