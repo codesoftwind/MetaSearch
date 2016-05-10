@@ -1,7 +1,8 @@
-from engines.googleFactory import GoogleFactory
+from engines.sogouFactory import SogouFactory
 from query.query_engines import AccessUrls
-query = 'apple'
-G = GoogleFactory()
+import sys
+query = sys.argv[1]
+G = SogouFactory()
 urls = G.urlGenerator(query)
 a = AccessUrls()
-a.gtaskManager(urls,G.extractSearchResults,proxy_flag = 1,ua_flag = 1)
+a.gtaskManager(urls,G.extractSearchResults,proxy_flag = 0,ua_flag = 1)

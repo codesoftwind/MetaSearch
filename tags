@@ -1,0 +1,107 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+AccessUrls	query/query_engines.py	/^class AccessUrls:$/;"	c
+EngineFactory	engines/enginesFactory.py	/^class EngineFactory:$/;"	c
+G	test.py	/^G = GoogleFactory()$/;"	v
+GoogleFactory	engines/googleFactory.py	/^class GoogleFactory(EngineFactory):$/;"	c
+Interface	query/gtaskpool/gtaskpool_helper.py	/^class Interface(object):$/;"	c
+LOG_FORMAT	query/proxymanager/example.py	/^    LOG_FORMAT = "%(asctime)s %(levelname)s: %(message)s"$/;"	v
+Proxy	query/proxymanager/proxymanager.py	/^class Proxy(object):$/;"	c
+ProxyManager	query/proxymanager/proxymanager.py	/^class ProxyManager(object):$/;"	c
+ProxyPool	query/proxymanager/proxymanager.py	/^class ProxyPool(object):$/;"	c
+ProxyStat	query/proxymanager/proxymanager.py	/^class ProxyStat(object):$/;"	c
+SearchResult	engines/searchResult.py	/^class SearchResult:$/;"	c
+Task	query/gtaskpool/gtaskpool.py	/^class Task(object):$/;"	c
+__init__	engines/googleFactory.py	/^    def __init__(self):$/;"	m	class:GoogleFactory
+__init__	engines/searchResult.py	/^    def __init__(self):$/;"	m	class:SearchResult
+__init__	query/gtaskpool/gtaskpool.py	/^    def __init__(self, func, args=None):$/;"	m	class:Task
+__init__	query/gtaskpool/gtaskpool_helper.py	/^    def __init__(self, get_proxy, proxy_feedback, get_useragent):$/;"	m	class:Interface
+__init__	query/proxymanager/proxymanager.py	/^    def __init__(self, get_proxies, limited_url_patterns, refreshproxy, *get_proxies_args):$/;"	m	class:ProxyManager
+__init__	query/proxymanager/proxymanager.py	/^    def __init__(self, proxy, ts=0):$/;"	m	class:Proxy
+__init__	query/proxymanager/proxymanager.py	/^    def __init__(self, url_pattern, avg_interval, init_proxy_list):$/;"	m	class:ProxyPool
+__init__	query/proxymanager/proxymanager.py	/^    def __init__(self, usecount, failcount):$/;"	m	class:ProxyStat
+__init__	query/query_engines.py	/^    def __init__(self):$/;"	m	class:AccessUrls
+__lt__	query/proxymanager/proxymanager.py	/^    def __lt__(self, ipentry2):$/;"	m	class:Proxy	file:
+__repr__	query/proxymanager/proxymanager.py	/^    def __repr__(self):$/;"	m	class:Proxy	file:
+a	test.py	/^a = AccessUrls()$/;"	v
+domain1	query/proxymanager/example.py	/^    domain1 = "http:\/\/www.baidu.com\/test"$/;"	v
+domain2	query/proxymanager/example.py	/^    domain2 = "http:\/\/www.baidu.com\/link"$/;"	v
+domain3	query/proxymanager/example.py	/^    domain3 = "http:\/\/www.baidu.com"$/;"	v
+domain4	query/proxymanager/example.py	/^    domain4 = "http:\/\/www.baidu.com\/hello"$/;"	v
+domain5	query/proxymanager/example.py	/^    domain5 = "https:\/\/www.csdn.com"$/;"	v
+domains	query/proxymanager/example.py	/^    domains = [domain1, domain2, domain1, domain1,$/;"	v
+engine_domain	engines/enginesFactory.py	/^    engine_domain = ""$/;"	v	class:EngineFactory
+engine_name	engines/enginesFactory.py	/^    engine_name = ""$/;"	v	class:EngineFactory
+engine_weight	engines/enginesFactory.py	/^    engine_weight = 0$/;"	v	class:EngineFactory
+extractSearchResults	engines/enginesFactory.py	/^    def extractSearchResults(self):$/;"	m	class:EngineFactory
+extractSearchResults	engines/googleFactory.py	/^    def extractSearchResults(self,html):$/;"	m	class:GoogleFactory
+extractSearchResults	query/query_engines.py	/^def extractSearchResults(html):$/;"	f
+failratio	query/proxymanager/proxymanager.py	/^    def failratio(self):$/;"	m	class:ProxyStat
+feedback	query/proxymanager/proxymanager.py	/^    def feedback(self, proxy, ok):$/;"	m	class:ProxyManager
+fleft	query/gtaskpool/example_proxy.py	/^    fleft = open("left.txt", 'w')$/;"	v
+fresult	query/gtaskpool/example_proxy.py	/^    fresult = open("result.txt", 'w')$/;"	v
+gen_task	query/gtaskpool/gtaskpool_helper.py	/^    def gen_task():$/;"	f	function:runtasks
+getContent	engines/searchResult.py	/^    def getContent(self):$/;"	m	class:SearchResult
+getTitle	engines/searchResult.py	/^    def getTitle(self):$/;"	m	class:SearchResult
+getURL	engines/searchResult.py	/^    def getURL(self):$/;"	m	class:SearchResult
+get_http_proxies	query/proxymanager/downloadproxylist.py	/^def get_http_proxies(url="http:\/\/192.168.120.17:8014\/proxy\/get_http_proxy_list"):$/;"	f
+get_http_proxy_list	query/proxymanager/downloadproxylist.py	/^def get_http_proxy_list(url="http:\/\/192.168.120.17:8014\/proxy\/get_http_proxy_list"):$/;"	f
+get_interfaces	query/gtaskpool/gtaskpool_helper.py	/^def get_interfaces(proxymgr, useragents):$/;"	f
+get_proxy	query/gtaskpool/gtaskpool_helper.py	/^    def get_proxy(url):$/;"	f	function:get_proxy_wrapper
+get_proxy_wrapper	query/gtaskpool/gtaskpool_helper.py	/^def get_proxy_wrapper(next_proxy):$/;"	f
+get_socks_proxy_list	query/proxymanager/downloadproxylist.py	/^def get_socks_proxy_list():$/;"	f
+get_useragent	query/gtaskpool/gtaskpool_helper.py	/^    def get_useragent():$/;"	f	function:get_useragent_wrapper
+get_useragent_wrapper	query/gtaskpool/gtaskpool_helper.py	/^def get_useragent_wrapper(useragents):$/;"	f
+get_useragents	query/proxymanager/downloadualist.py	/^def get_useragents(url="http:\/\/192.168.120.17:8014\/proxy\/get_useragent_list"):$/;"	f
+getproxylist	query/proxymanager/downloadproxylist.py	/^def getproxylist():$/;"	f
+getualist	query/proxymanager/downloadualist.py	/^def getualist(url="http:\/\/192.168.120.17:8014\/proxy\/get_useragent_list"):$/;"	f
+greenlet_wrapper	query/proxymanager/proxymanager.py	/^def greenlet_wrapper(f):$/;"	f
+gs	query/proxymanager/example.py	/^    gs = [gevent.spawn(request_proxy, proxymgr, url) for url in domains]$/;"	v
+gtaskManager	query/query_engines.py	/^    def gtaskManager(self,urls,extractSearchResults,proxy_flag = 0,ua_flag = 0):$/;"	m	class:AccessUrls
+inner	query/proxymanager/proxymanager.py	/^    def inner(*args, **kwargs):$/;"	f	function:greenlet_wrapper
+is_limited_url	query/proxymanager/proxymanager.py	/^    def is_limited_url(self, url):$/;"	m	class:ProxyManager
+limited_urls	query/gtaskpool/example_proxy.py	/^    limited_urls = [$/;"	v
+limited_urls	query/proxymanager/example.py	/^    limited_urls = [$/;"	v
+log_task_result	query/gtaskpool/gtaskpool_helper.py	/^def log_task_result(result, filehandle):$/;"	f
+next_proxy	query/proxymanager/proxymanager.py	/^    def next_proxy(self, url):$/;"	m	class:ProxyManager
+page_num	engines/enginesFactory.py	/^    page_num = ""$/;"	v	class:EngineFactory
+printIt	engines/searchResult.py	/^    def printIt(self, prefix=''):$/;"	m	class:SearchResult
+print_friendly_args	query/gtaskpool/gtaskpool.py	/^    def print_friendly_args(self):$/;"	m	class:Task
+proxies	query/proxymanager/example.py	/^    proxies = [$/;"	v
+proxymgr	query/gtaskpool/example_proxy.py	/^            {'refresh': True, 'interval': 30*60, 'delay': 8*60}, *purl2)$/;"	v
+proxymgr	query/proxymanager/example.py	/^    proxymgr = ProxyManager(proxies, limited_urls)$/;"	v
+purl1	query/gtaskpool/example_proxy.py	/^    purl1 = ["http:\/\/192.168.120.17:8014\/proxy\/get_http_proxy_list"]$/;"	v
+purl2	query/gtaskpool/example_proxy.py	/^    purl2 = ["http:\/\/192.168.1.14:5500\/get_http_proxy_list"]$/;"	v
+query	test.py	/^query = 'apple'$/;"	v
+requestUrl	query/query_engines.py	/^    def requestUrl(self,url,try_idx):$/;"	m	class:AccessUrls
+request_proxy	query/proxymanager/example.py	/^    def request_proxy(proxymgr, url):$/;"	f
+results_num	engines/enginesFactory.py	/^    results_num = ""$/;"	v	class:EngineFactory
+retry_task	query/gtaskpool/gtaskpool_helper.py	/^def retry_task(task, task_log, max_try):$/;"	f
+runtasks	query/gtaskpool/gtaskpool.py	/^def runtasks(task_generator, max_ongoing_tasks=1000):$/;"	f
+runtasks	query/gtaskpool/gtaskpool_helper.py	/^def runtasks(task_generator, task_log, max_try=10):$/;"	f
+setContent	engines/searchResult.py	/^    def setContent(self, content):$/;"	m	class:SearchResult
+setTitle	engines/searchResult.py	/^    def setTitle(self, title):$/;"	m	class:SearchResult
+setURL	engines/searchResult.py	/^    def setURL(self, url):$/;"	m	class:SearchResult
+set_proxies_state	query/proxymanager/proxymanager.py	/^    def set_proxies_state(self, proxies):$/;"	m	class:ProxyManager
+setlogging	query/gtaskpool/gtaskpool.py	/^def setlogging(level,task_log):$/;"	f
+setproxies	query/proxymanager/proxymanager.py	/^    def setproxies(self, refreshproxy):$/;"	m	class:ProxyManager
+task	query/gtaskpool/example.py	/^def task(n1, n2):$/;"	f
+task	query/gtaskpool/example_proxy.py	/^def task(url, try_idx):$/;"	f
+task	query/query_engines.py	/^    def task(self, url, try_idx, extractSearchResults):$/;"	m	class:AccessUrls
+taskGenerator	query/query_engines.py	/^    def taskGenerator(self,urls,extractSearchResults):$/;"	m	class:AccessUrls
+task_generator	query/gtaskpool/example.py	/^def task_generator():$/;"	f
+task_generator	query/gtaskpool/example_proxy.py	/^def task_generator():$/;"	f
+task_retry	query/gtaskpool/example_proxy.py	/^def task_retry(url):$/;"	f
+urlGenerator	engines/enginesFactory.py	/^    def urlGenerator(self):$/;"	m	class:EngineFactory
+urlGenerator	engines/googleFactory.py	/^    def urlGenerator(self,query):$/;"	m	class:GoogleFactory
+urls	test.py	/^urls = G.urlGenerator(query)$/;"	v
+usefeedback	query/proxymanager/proxymanager.py	/^    def usefeedback(self, ok):$/;"	m	class:ProxyStat
+useragents	query/gtaskpool/example_proxy.py	/^    useragents = get_useragents(uurl2)$/;"	v
+uurl1	query/gtaskpool/example_proxy.py	/^    uurl1 = "http:\/\/192.168.120.17:8014\/proxy\/get_useragent_list"$/;"	v
+uurl2	query/gtaskpool/example_proxy.py	/^    uurl2 = "http:\/\/192.168.1.14:5500\/get_useragent_list"$/;"	v
+writeFilToTxt	engines/searchResult.py	/^    def writeFilToTxt(self, filename):$/;"	m	class:SearchResult
+writeFileToJson	engines/searchResult.py	/^    def writeFileToJson(self, filename):$/;"	m	class:SearchResult
