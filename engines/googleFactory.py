@@ -29,13 +29,15 @@ class GoogleFactory(EngineFactory):
             urls = list()
             results_per_page = self.results_num/self.page_num
             for p in range(0, self.page_num):
-                start = p * results_per_page
-                url = '%ssearch?hl=en&num=%d&start=%s&q=%s&filter=0' % (
-                    self.engine_domain, results_per_page, start, query)
+                first = p * results_per_page
+               # url = '%ssearch?hl=en&num=%d&start=%s&q=%s&filter=0' % (
+               #     self.engine_domain, results_per_page, start, query)
+                url = 'https://search.disconnect.me/searchTerms/search?start=nav&option=Web&query='+query+'&ses=Google&location_option=US&nextDDG=%2Fsearch%3Fq%3D%26hl%3Den%26start%3D'+str(first)+'%26sa%3DN&showIcons=false&filterIcons=none&js_enabled=1&source=None'
                 urls_list.append(url)
         return urls_list
     def extractSearchResults(self,html):
         print html
+        '''
         results = list()
         soup = BeautifulSoup(html)
         div = soup.find('div', id='search')
@@ -63,3 +65,22 @@ class GoogleFactory(EngineFactory):
                         result.setContent(content)
                     results.append(result)
         return results
+        '''
+        search_results = list()
+        soup = BeautifulSoup(html)
+        try:
+            ul = soup.find_all('ul',id='normal-results')
+            lis = ul[0].find_all('li')
+        except:
+            logging_error("fail to extract the page:%s", url)
+        else:
+            for li in lis:
+                search_result = SearchResult()
+                search_result.setURL(li.find('a')['href'])
+                search_result.setContent(li.find('p').text)
+                search_result.setTitle(li.find('a').text)
+                if bloom_filter.is_not_contained(search_result.getURL()):
+                    bloom_filter.bf_add(search_result.getURL())
+                    search_results.append(search_result)
+            return search_results
+
